@@ -1,0 +1,2 @@
+module Aufgabe_01 {
+}
