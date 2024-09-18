@@ -1,0 +1,38 @@
+"const"    
+wird verwendet um konstanten zu deklarieren oder anzuzeigen. Sprich der Wert einer Variable kann nach der initialisierung nicht geändert werden.
+"const" wird in memberfunktionen (public/private) von klassen verwendet um anzuzeigen, dass die Funktion den Zustand des Objekts nicht ändert
+setzt Unveränderlichkeit durch
+
+&
+wird als Referenzoperator verwendet. steht dieser vor einem Datentyp ( int&) handelt es sich um eine Referenz auf eine Variable diees Datentyps. Eine Referenz ermöglciht es, einer bereits existierenden Variable einen alternativen Namen zuzuweisen.
+int x = 5;
+int& ref = x
+
+ref = 100
+std::cout << x;     //gibt 100 aus
+
+Konstruktor
+
+für die Klasse Produkt, dieser nimmt 3 Parameter entgegen newN,newA,newA welche als Referenzen auf verschiedene Datentypen sind. Der konstruktor setzt die übergebenen werte in die ensprechenden Membervariablen der Klasse. Parameter werden als Referenzen übergeben, um kopien der Objekte zu vermeiden und Leistung zu verbessern.
+
+
+setAnzahl   
+wird in der klasse 'Produkt' deklariert/definiert. greift auf die Variable 'anzahl' zu. durch den Aufruf von 'anzahl = newAnzahl' wird der Wert der variable 'anzahl' aktualisiert, der der funktion 'setAnzahl' als Parameter 'newAnzahl' übergeben wird.
+Die Funktion ermöglicht es, die Anzahl des Produkts innerhalb eines Produkt-Objekts zu aktualiesieren.
+
+Vorratskammer* 
+wird verwendet um zu gewährleisten dass nur eine einzige instanz der klasse existiert. indem instance als pointer deklariert wird, können wir eine Instanz der klasse Vorratskammer dynamisch allozieren und sie durhc den pointer speichern. mit 'new' wird die klasse dynamisch alloziert, dadurch können wir sichergehenm dass die Klasse erstellt wird, wenn 'getInstance' zum ersten Mal aufgerufen wird.
+Weil instance als statisches element deklariert wird, kann auf sie über die statische methode 'getInstance()' zugegriffen werden. dadruch haben wir einen globalen zugriffspunkt auf die einzige instanz der klasse.
+
+dynamisch allozieren
+bezieht sich auf die speicherzuweisung während der laufzeit des programms.
+
+size_t i=0
+bsp marmorkuchen Name 0, Anzahl 0, Ablaufdatum 0
+TIefkuehlpizza Name 1, Anzahl 1, Ablaufdatum 1
+
+bis das letzte produkt in der liste gelistet ist
+
+der Index wird um 1 erhöht, szuzagen Produkt 1 wird gelistet, dann produkt 2 etc...
+
+bei einer schleife, die über eine Sammlung von objekten iteriert kann ein indexzähler auf jedes Element in der Sammlung zugreifen

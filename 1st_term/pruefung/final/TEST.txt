@@ -1,0 +1,60 @@
+In dieser Textdatei sind einige Tests, die an meinem Programm, der Verwaltung einer Vorratskammer, durchgeführt wurden dokumentiert.
+
+Beginnend mit der Ausführung des Programms ist zu erwarten, dass sich ein Menü über 6 Zeilen öffnet, welches von 1-6 durchnummeriert ist und die verschiedene Auswahlmöglichkeiten ("Lagerbestand", "Neues Produkt eingeben", "Produktbestand verringern", "Geringer Bestand", "Produkte die innerhalb der nächsten 7 Tagen ablaufen" und "Beenden des Programms") darlegt. Nun kann man zwischen diesen Optionen auswählen indem man die den Optionen zugeordneten Zahlen eingibt, bei Eingabe eines nicht zugeordneten Zeichen erhält man die Meldung "Ungültige Auswahl. Bitte erneut versuchen." und gelangt zurück zur Auswahl.
+Dies entspricht der erwarteten Ausgabe.
+
+Im Menü gelangt man mittels Eingabe von '1' zum Lagerbestand. Hier werden alle in die Vorratskammer eingepflegten Produkte im Format "'Name', 'Ablaufdatum, 'Anzahl'" in der Konsole ausgegeben. Daraus kann man die Produkte, das Ablaufdatum und die eingelagerte Anzahl ablesen. Sollte beim Öffnen der Datei ein Fehler auftreten, so erhält man die Meldung "Fehler beim öffnen der Datei Vorratskammer.txt". Meine erhaltene Ausgabe entspricht:
+===================================
+Marmorkuchen;13.05.2024;76
+Tiefkuehlpizza;21.12.2024;123
+...
+===================================
+Dies entspricht der erwarteten Ausgabe.
+
+Im Menü gelangt man mittels Eingabe von '2' zur Funktion zum Eingliedern neuer Produkte. Beim betätigen wird eine Benutzereingabe angefordert:
+"Name des Produkts: " Apfelkuchen
+"Ablaufdatum (Format: dd.mm.yyyy, oder 'keines'): " 24.06.2025
+"Menge: " 7
+Anschließend ist man wieder in der Menüauswahl.
+Dies entspricht der erwarteten Ausgabe.
+
+Im Menü gelangt man mittels Eingabe von '3' zur Funktion zum Produktbestand verringern. Beim betätigen wird eine Benutzereingabe angefordert:
+"Name des zu entfernenden Produkts: " Apfelkuchen
+"Menge zu Entfernen: " 4
+Zurück erhält man die Meldungen:
+"4 Einheiten von Apfelkuchen entfernt."
+"Übrige Anzahl: 3"
+Wenn man den Bestand eines Produkts auf 0 reduziert, sollte eine andere Meldung erscheinen und die Zeile in der Vorratskammer.txt-datei gelöscht werden:
+"Name des zu entfernenden Produkts: " Apfelkuchen
+"Menge zu Entfernen: " 3
+Zurück erhält man die Meldungen:
+"3 Einheiten von Apfelkuchen entfernt."
+"Übrige Anzahl: 0"
+"Produkt Apfelkuchen wurde entfernt."
+Bei Eingabe eines Produkts, welches nicht in der Vorratskammer.txt angegeben ist, erhält man folgende Fehlermeldung und ist anschließend wieder in der Menüauswahl.
+"Name des zu entfernenden Produkts: " Apfelkuchen
+"Fehler: Produkt nicht im System gefunden."
+Dies entspricht der erwarteten Ausgabe.
+
+Im Menü gelangt man mittels Eingabe von '4' zum geringen Bestand. Erwartet wird, eine Liste mit "'Produktname' ('Anzahl')" aller Produkte, dessen Bestand <100 ist. So erhalte ich:
+===================================
+Marmorkuchen (76)
+Zahnpasta (13)
+...
+===================================
+Dies entspricht der erwarteten Ausgabe.
+
+Im Menü gelangt man mittels Eingabe von '5' zu Produkten, die innerhalb der nächsten 7 Tage ablaufen. Erwartet wird die Ausgabe "Hundefutter, am 10.02.2024" und weitere Produkte, dessen Ablaufdatum innerhalb der nächsten 7 Tage liegt.
+Das Datum der Testversuche ist der 08.02.2024.
+===================================
+Hundefutter, am 10.02.2024
+Katzenfutter, am 11.02.2024
+...
+===================================
+Dies entspricht der erwarteten Ausgabe.
+
+Im Menü beendet man das Programm mittel Eingabe von '6'. Als letzte Meldung gibt das Programm 'Programm wird beendet!" aus und wird beendet.
+"Programm wird beendet!"
+Dies entspricht der erwarteten Ausgabe.
+
+
