@@ -1,0 +1,16 @@
+#convert to Diode.gnu
+
+set grid
+set datafile separator ";"
+set terminal pngcairo
+set output 'plot_D.png'
+set ylabel "I_D in A"
+set xlabel "U_S_D in V"
+set autoscale
+plot '8_4werte0.txt' using 1:2 with lines title "1.5 V",\
+     '8_4werte1.txt' using 1:2 with lines title "1.6 V",\
+     '8_4werte2.txt' using 1:2 with lines title "1.7 V",\
+     '8_4werte3.txt' using 1:2 with lines title "1.8 V",\
+     '8_4werte4.txt' using 1:2 with lines title "1.9 V",\
+     '8_4werte5.txt' using 1:2 with lines title "2 V",\
+     '8_4werte6.txt' using 1:2 with lines title "2.1 V"

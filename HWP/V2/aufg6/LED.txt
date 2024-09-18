@@ -1,0 +1,11 @@
+#convert to LED.gnu
+
+set grid
+set datafile separator ";"
+set terminal pngcairo
+set output 'plot.png'
+set ylabel "U_A_E_0 in V"
+set xlabel "U_A_A_0 in V"
+set xr [0:5]
+set yr [0:3.5]
+plot 'werteLED.txt' using 1:2 with lines title "LED"

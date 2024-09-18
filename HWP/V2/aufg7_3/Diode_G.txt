@@ -1,0 +1,10 @@
+#convert to Diode_G.gnu 
+
+set grid
+set datafile separator ";"
+set terminal pngcairo
+set output 'plot_D_G.png'
+set ylabel "I in A"
+set xlabel "U_D_i_o_d_e in V"
+set autoscale
+plot 'werte_D1_G.txt' using 1:2 with lines title "D1", 'werte_D2_G.txt' using 1:2 with lines title "D2", 'werte_D3_G.txt' using 1:2 with lines title "D3", 'werte_D4_G.txt' using 1:2 with lines title "D4", 'werte_D5_G.txt' using 1:2 with lines title "D5"

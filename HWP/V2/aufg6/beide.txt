@@ -1,0 +1,12 @@
+#convert to beide.gnu
+
+set datafile separator ";"
+set terminal pngcairo
+set output 'plot.png'
+set grid
+set title "Widerstandkennlinie"
+set xlabel "U_A_A_0 in V"
+set ylabel "U_A_E_0 in V"
+set xr [0:5]
+set yr [0:5]
+plot 'werte100.txt' using 1:2 with lines title "100 Ohm",'werte1k.txt' using 1:2 with lines title "1k Ohm"
