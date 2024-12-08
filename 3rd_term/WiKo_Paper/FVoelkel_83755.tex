@@ -1,1 +1,132 @@
+\documentclass[a4paper,10pt,parskip,twocolumn]{article}
 
+\usepackage{graphicx}
+\usepackage{polyglossia}
+
+\usepackage[backend=biber,style=alphabetic]{biblatex}
+\addbibresource{paper-literatur.bib}
+
+
+\setdefaultlanguage[spelling=new,babelshorthands=true]{german}
+
+
+\usepackage{fontspec}
+\setmainfont{Source Serif Pro}
+\setsansfont{Source Sans Pro}
+
+% ------
+% Clickable URLs (optional)
+\usepackage{hyperref}
+
+\usepackage[left=2cm,right=2cm,top=3.0cm,bottom=3.0cm]{geometry}
+
+
+
+\title {Einfluss OpenAi auf Cybersecurity \& Malwareentwicklung }
+\author{
+	\Large Ferdinand Völkel \\[2mm]
+	\normalsize HTWK Leipzig \\
+	\texttt{ferdinand.voelkel@stud.htwk-leipzig.de}
+}
+\date{09.12.2024}
+
+
+
+
+\begin{document}
+
+
+
+
+% -------
+% Titel und Abstract über beide Spalten
+\twocolumn[
+\begin{@twocolumnfalse}
+
+	\maketitle
+	\begin{abstract}
+	Die zunehmende Demokratisierung von KI-Technologien wie ChatGPT stellt ein Paradoxon dar: Einerseits stärkt sie Cyberabwehrmaßnahmen durch Automatisierung und Effizienzgewinne, andererseits öffnet sie auch die Tür für Angriffe, die zuvor nur erfahrenen Hackern möglich waren. Dieses Thema ist daher besonders spannend, weil es sowohl die positiven als auch die negativen Konsequenzen einer sich schnell entwickelnden Technologie aufzeigt. Für Sicherheitsforscher, Unternehmen und politische Entscheidungsträger bietet diese Arbeit wertvolle Einblicke und Denkanstöße für den Umgang mit KI-gestützter Cybersecurity.
+	\end{abstract}
+
+% ------
+% Querstrich und zurück zum zweispaltigen Modus
+\mbox{}\hrule\mbox{}\\
+\end{@twocolumnfalse}
+]
+
+\section{Einleitung}
+
+Die rasante Entwicklung von Künstlicher Intelligenz (KI) hat in den letzten Jahren zahlreiche technologische Innovationen hervorgebracht, die das Potenzial besitzen, ganze Industrien zu revolutionieren. Ein herausragendes Beispiel ist OpenAI's ChatGPT, ein leistungsstarkes Sprachmodell, das in der Lage ist, menschenähnliche Texte zu generieren und komplexe Aufgaben zu lösen. Obwohl KI-Modelle wie ChatGPT in vielen Bereichen – darunter Kundenservice, Bildung und Softwareentwicklung – erhebliche Fortschritte erzielt haben, zeigt sich zunehmend ihr ambivalenter Einfluss im Bereich der Cybersecurity.
+
+Die zentrale Motivation dieser Arbeit besteht darin, sowohl die positiven Anwendungen als auch die potenziellen Risiken von ChatGPT für die Cybersicherheit zu beleuchten. Insbesondere soll untersucht werden, wie das Sprachmodell Sicherheitsmaßnahmen verbessern kann, gleichzeitig aber auch von Angreifern für Cyberattacken und die Entwicklung von Malware genutzt werden könnte. Dieses Spannungsfeld macht das Thema nicht nur aktuell, sondern auch von großer Relevanz für Unternehmen, Forschungseinrichtungen und Sicherheitsexperten.
+
+Das Ziel dieser Arbeit ist es, einen klaren Überblick über die Chancen und Risiken von KI zu bieten und mögliche Lösungsansätze für den verantwortungsvollen Umgang mit dieser Technologie aufzuzeigen. Dazu wird eine systematische Analyse der aktuellen Möglichkeiten und Herausforderungen vorgenommen, die KI in der Cybersecurity bietet.
+
+
+\section{positive Nutzung der KI}
+
+Generative KI zeigt großes Potenzial bei der Stärkung von Sicherheitsmaßnahmen. Zu den positiven Anwendungen gehören Vulnerability Scanning und Threat Detection. Laut Kalla et al. (2023) kann KI beispielsweise Schwachstellen in Code identifizieren und automatisierte Patches vorschlagen, wodurch die Sicherheit von Software verbessert wird.
+. Durch den Einsatz von NLP-Techniken (Natural Language Processing) ist KI außerdem in der Lage, Phishing-Mails zu erkennen und Benutzer entsprechend zu schulen, um sie gegen Social-Engineering-Angriffe widerstandsfähiger zu machen.
+
+Ein weiteres positives Anwendungsgebiet ist die Automatisierung von Sicherheitsoperationen. Sicherheitszentren (SOCs) stehen vor der Herausforderung, täglich Tausende von Sicherheitswarnungen zu verwalten. Generative KI kann repetitive Aufgaben automatisieren, Vorfälle kategorisieren und priorisieren sowie Berichte generieren, um Analysten zu entlasten. Dadurch können Teams ihre Ressourcen effizienter nutzen und sich auf komplexe Sicherheitsprobleme konzentrieren.
+
+Auch im Bereich der Threat Intelligence bietet KI neue Möglichkeiten. Sie kann große Datenmengen aus Sicherheitsblogs, Foren und Nachrichten analysieren, um Echtzeit-Bedrohungsberichte zu erstellen. Diese Berichte helfen Sicherheitsanalysten, frühzeitig auf neue Angriffsmuster und Schwachstellen zu reagieren. Gupta et al. (2023) betonen, dass KI-gestützte Bedrohungserkennung Systeme stärken kann, indem sie Angriffe schneller identifiziert und präzise Gegenmaßnahmen vorschlägt​
+.
+
+Ein weiterer Vorteil ist die Sicherheitsausbildung und Sensibilisierung. KI kann realistische Cyberangriffe simulieren und Benutzern helfen, ihre Reaktionsfähigkeit zu trainieren. Durch personalisierte Schulungsmaßnahmen lernen Mitarbeiter, potenzielle Bedrohungen wie Phishing-E-Mails oder Social Engineering zu erkennen und richtig zu handeln. Dies stärkt die „menschliche Firewall“ in Unternehmen, die häufig das schwächste Glied in der Sicherheitskette darstellt​
+.
+
+\section{Risiken und Missbrauch von KI}
+
+Obwohl generative KI Sicherheitsmaßnahmen stärkt, eröffnet die Technologie auch Möglichkeiten für kriminelle Akteure. Ein bedeutendes Risiko besteht in der automatisierten Malwareentwicklung. Wie Al-Hawawreh et al. (2023) zeigen, kann KI in der Lage sein, schädlichen Code zu generieren, etwa Ransomware, Keylogger oder Stealth-Malware, selbst wenn ursprünglich ethische Sicherheitsmaßnahmen integriert wurden​
+. Hier spielen sogenannte Jailbreaking-Techniken eine entscheidende Rolle: Angreifer können gezielte Eingabeaufforderungen (Prompts) verwenden, um die ethischen Filter von KI-Systemen zu umgehen und direkt nach schädlichem Code zu fragen​
+.
+
+Zusätzlich zu Malware kann KI zur Erstellung von Social-Engineering-Kampagnen genutzt werden. Generative KI kann täuschend echte Nachrichten generieren, die speziell auf das Ziel zugeschnitten sind – eine Technik, die als Spear Phishing bekannt ist. Laut Gupta et al. (2023) können solche Angriffe die Wahrscheinlichkeit erhöhen, dass Opfer auf manipulierte Links klicken oder sensible Daten preisgeben. Der Einsatz von KI macht es auch weniger erfahrenen Kriminellen möglich, ausgeklügelte Angriffe durchzuführen, was zu einer Demokratisierung von Cyberkriminalität führt​
+.
+
+Darüber hinaus stellt KI ein Risiko für False Data Injection Attacks dar. In industriellen Kontrollsystemen können Angreifer mithilfe von KI gefälschte Sensordaten einschleusen, um Prozesse zu manipulieren oder physische Schäden zu verursachen. Solche Angriffe sind schwer zu erkennen, da sie oft in normalem Datenrauschen versteckt werden. Al-Hawawreh et al. (2023) zeigen, dass KI sogar in der Lage ist, Angriffsstrategien zu entwickeln, die bestehende Erkennungssysteme umgehen können​
+.
+
+Ein weiteres Problem ist die Verbreitung von Desinformation und Fake News. KI-Systeme können genutzt werden, um falsche Informationen im großen Stil zu generieren und zu verbreiten. Solche Desinformationskampagnen können politische, wirtschaftliche oder soziale Instabilität hervorrufen und Vertrauen in digitale Systeme untergraben​
+.
+
+
+
+
+\section{Fazit und Ausblick}
+
+Die vorliegende Arbeit hat gezeigt, dass künstliche Intelligenz (KI) eine transformative Rolle im Bereich der Cybersecurity spielt. KI-Systeme wie generative Modelle bieten enorme Chancen, Sicherheitsmaßnahmen effizienter und präziser zu gestalten. Durch den Einsatz von NLP-Techniken können Bedrohungen frühzeitig erkannt, Schwachstellen in Code automatisch behoben und Sicherheitsoperationen optimiert werden. Zudem trägt KI zur Sensibilisierung von Nutzern bei, indem sie Schulungsmaßnahmen simuliert und zur Bekämpfung von Social-Engineering-Angriffen beiträgt. Diese positiven Anwendungen verdeutlichen das Potenzial der KI, die Cyberabwehr nachhaltig zu stärken und Sicherheitsressourcen effizienter zu nutzen.
+
+Dennoch darf nicht übersehen werden, dass KI auch erhebliche Risiken mit sich bringt. Kriminelle Akteure können KI-Systeme missbrauchen, um automatisiert Malware zu generieren, personalisierte Phishing-Angriffe zu erstellen und Fake News zu verbreiten. Die Möglichkeit, durch gezielte Manipulation ethische Filter zu umgehen, öffnet selbst weniger versierten Angreifern den Zugang zu gefährlichen Werkzeugen, was zur Demokratisierung von Cyberkriminalität führt. Zudem stellen Angriffe wie False Data Injection Attacks eine Gefahr für kritische Infrastrukturen dar, die schwer zu erkennen sind und weitreichende Folgen haben können.
+
+Um das volle Potenzial von KI im Bereich der Cybersecurity auszuschöpfen und gleichzeitig die Risiken zu minimieren, ist ein verantwortungsvoller Umgang mit dieser Technologie essenziell. Es müssen robuste Sicherheitsmechanismen entwickelt werden, die den Missbrauch von KI verhindern, beispielsweise durch bessere Filtermechanismen und Jailbreaking-Erkennung. Darüber hinaus sollten klare ethische Richtlinien und gesetzliche Rahmenbedingungen geschaffen werden, um den Einsatz von KI für schädliche Zwecke einzuschränken. Gleichzeitig muss die Forschung verstärkt daran arbeiten, KI-Modelle widerstandsfähiger und sicherer zu gestalten.
+
+Zusammenfassend zeigt sich, dass KI im Spannungsfeld zwischen Innovation und Risiko steht. Während sie die Cybersecurity revolutionieren und verbessern kann, stellt sie gleichzeitig neue Herausforderungen dar, die es zu bewältigen gilt. Eine enge Zusammenarbeit zwischen Forschung, Unternehmen und Regierungen ist notwendig, um KI verantwortungsbewusst weiterzuentwickeln und ihre positiven Anwendungen zu fördern, ohne die Sicherheit digitaler Systeme und Gesellschaften zu gefährden.
+
+---
+Die Einführung von OpenAI's ChatGPT hat den Bereich der Cybersecurity revolutioniert, birgt jedoch auch erhebliche Risiken. Während ChatGPT die Verteidigungsstrategien durch Bedrohungserkennung, Schwachstellenanalyse und Schulung der Benutzer verbessert, besteht gleichzeitig die Gefahr, dass es von Angreifern für die Entwicklung von Malware und Social-Engineering-Angriffen missbraucht wird.
+
+Der Schlüssel liegt in der kontinuierlichen Weiterentwicklung von Sicherheitsmaßnahmen und ethischen Richtlinien. Dies umfasst die Entwicklung von Mechanismen, die Jailbreaking-Versuche frühzeitig erkennen und verhindern können. Zudem müssen Unternehmen KI-Tools bewusst und verantwortungsvoll einsetzen und ihre Mitarbeiter für die Risiken sensibilisieren.
+
+Zukünftige Forschungen sollten sich darauf konzentrieren, robuste Mechanismen zur Prävention von KI-Missbrauch zu entwickeln und gleichzeitig die positiven Anwendungen weiter auszubauen. Die Balance zwischen Innovation und Sicherheit ist entscheidend, um die Chancen von KI wie ChatGPT zu nutzen und gleichzeitig die Bedrohungen zu minimieren.
+% -------
+% englischsprachige Darstellung der Literatur
+%\bibliographystyle{plainnat}
+
+% -------
+% deutschsprachige Darstellung der Literatur
+%\bibliographystyle{alpha}
+\printbibliography
+
+\section{Literatur}
+
+1. Al-Hawawreh, M., Aljuhani, A. \& Jararweh, Y. Chatgpt for cybersecurity: practical applications, challenges, and future directions". Cluster Comput 26, 3421–3436 (2023). https://doi.org/10.1007/s10586-023-04124-5
+
+
+2. M. Gupta, C. Akiri, K. Aryal, E. Parker and L. Praharaj, "From ChatGPT to ThreatGPT: Impact of Generative AI in Cybersecurity and Privacy," in IEEE Access, vol. 11, pp. 80218-80245, 2023, doi: 10.1109/ACCESS.2023.3300381
+
+
+3. Kalla, Dinesh and Kuraku, Sivaraju and Samaah, Fnu, Advantages, Disadvantages and Risks Associated with ChatGPT and AI on Cybersecurity (October 31, 2023). Journal of Emerging Technologies and Innovative Research, October 2023, Volume 10, Issue 10, Available at SSRN: https://ssrn.com/abstract=4619204
+
+\end{document}
